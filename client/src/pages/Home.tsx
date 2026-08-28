@@ -1,5 +1,5 @@
 /* Street-side Chapter: warm editorial restaurant page, offset composition, Chapter Green + curry orange, useful motion only. */
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   ArrowDownRight,
   ArrowUpRight,
@@ -137,6 +137,8 @@ export default function Home() {
   const heroBack = useRef<HTMLDivElement>(null);
   const heroMid = useRef<HTMLDivElement>(null);
   const heroFront = useRef<HTMLDivElement>(null);
+  const adVideoRef = useRef<HTMLVideoElement>(null);
+  const [adSoundOn, setAdSoundOn] = useState(false);
 
   useEffect(() => {
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -159,6 +161,16 @@ export default function Home() {
       if (frame) window.cancelAnimationFrame(frame);
     };
   }, []);
+
+  const toggleAdSound = () => {
+    const video = adVideoRef.current;
+    if (!video) return;
+    const nextSoundOn = video.muted;
+    video.muted = !nextSoundOn;
+    if (nextSoundOn) video.volume = 1;
+    if (video.paused) void video.play();
+    setAdSoundOn(nextSoundOn);
+  };
 
   return (
     <main>
@@ -224,7 +236,7 @@ export default function Home() {
 
       <section className="ad-film section-shell" aria-labelledby="ad-film-title">
         <div className="ad-film__copy"><SectionKicker number="02" children="In motion" /><h2 id="ad-film-title">A chapter<br /><i>on camera.</i></h2><p>A look at Food Chapter as it is meant to be seen: close, warm, and ready for the next order.</p><a className="button button--orange" href={whatsappHref} target="_blank" rel="noreferrer"><MessageCircle size={17} /> Ask about an order</a></div>
-        <div className="ad-film__frame"><video autoPlay muted loop playsInline poster={ASSETS.adPoster} preload="metadata"><source src={ASSETS.adVideo} type="video/mp4" /></video><span className="ad-film__label">Food Chapter / advertising film</span></div>
+        <div className="ad-film__frame"><video ref={adVideoRef} autoPlay muted loop playsInline controls poster={ASSETS.adPoster} preload="metadata"><source src={ASSETS.adVideo} type="video/mp4" /></video><span className="ad-film__label">Food Chapter / advertising film</span><button className="ad-film__sound" type="button" onClick={toggleAdSound} aria-pressed={adSoundOn}>{adSoundOn ? "Mute sound" : "Play with sound"}<ArrowUpRight size={14} /></button></div>
       </section>
 
       <section id="menu" className="menu section-shell">
