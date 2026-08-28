@@ -17,12 +17,12 @@ const ASSETS = {
   mark: "/brand-mark.svg",
   heroVideo: "/manus-storage/food-chapter-hero_755e2c79.mp4",
   heroPoster: "/manus-storage/food-chapter-hero-poster_a7c9a852.jpg",
+  adVideo: "/manus-storage/food-chapter-ad_7b18d004.mp4",
+  adPoster: "/manus-storage/food-chapter-ad-poster_8de94da9.jpg",
   menuArtwork: "/manus-storage/food-chapter-menu_a7afd19d.jpg",
+  ownerLogo: "/manus-storage/food-chapter-owner-logo_bb582429.jpg",
   paperTexture: "",
-  burgerDetail: "/manus-storage/food-chapter-burger-detail_0ebedf2e.jpg",
-  pizzaDetail: "/manus-storage/food-chapter-pizza-detail_895a70a9.jpg",
-  wrapDetail: "/manus-storage/food-chapter-wrap-detail_5ddead1f.jpg",
-  wingsDetail: "/manus-storage/food-chapter-wings-detail_1625ea80.jpg",
+
 };
 
 const phone = "+92 328 4118664";
@@ -205,21 +205,31 @@ export default function Home() {
       </section>
 
       <section id="story" className="story section-shell">
-        <div className="story__label"><SectionKicker number="01" children="A little context" /><span className="side-note">Good food, no long preface.</span></div>
+        <div className="story__label"><SectionKicker number="01" children="Pick your chapter" /><span className="side-note">Five ways to answer the hunger.</span></div>
         <div className="story__copy">
-          <h2>A familiar place<br /><i>with a little spark.</i></h2>
-          <p>Food Chapter is a fast-food spot in Lahore’s Gulbahar Colony, made for easy decisions and satisfying detours. Come in for a quick bite, take it away for the road, or skip straight to the chat and let your next order write itself.</p>
-          <a className="text-link" href={mapsHref} target="_blank" rel="noreferrer">Find the chapter <ArrowUpRight size={16} /></a>
+          <h2>Start with the<br /><i>good part.</i></h2>
+          <p>Food Chapter is a fast-food spot in Lahore’s Gulbahar Colony for easy decisions and satisfying detours. Find the right lane, then take it dine-in, takeout, or straight to WhatsApp.</p>
+          <div className="story__lanes"><span><b>01</b> Burgers</span><span><b>02</b> Pizza</span><span><b>03</b> Wraps</span><span><b>04</b> Broast</span><span><b>05</b> Fries</span></div>
+          <a className="text-link" href="#menu">Open the full menu <ArrowDownRight size={16} /></a>
         </div>
-        <div className="story__visual">
-          <img src={ASSETS.menuArtwork} alt="Food Chapter menu artwork with burgers, fries, wraps, broast, pizza, and deals" loading="lazy" />
-          <span className="story__caption">A close-up worth pausing for.</span>
+        <div className="story__card">
+          <img className="owner-logo" src={ASSETS.ownerLogo} alt="Food Chapter owner-provided logo" loading="lazy" />
+          <div className="story__card-stamp">FOOD<br />CHAPTER</div>
+          <span className="story__card-label">One good decision</span>
+          <strong>Pick a lane.<br /><i>Make it a chapter.</i></strong>
+          <p>Prices and sizes are listed below exactly as shown on the supplied menu.</p>
+          <a className="button button--orange" href={whatsappHref} target="_blank" rel="noreferrer"><MessageCircle size={16} /> Ask what’s good</a>
         </div>
+      </section>
+
+      <section className="ad-film section-shell" aria-labelledby="ad-film-title">
+        <div className="ad-film__copy"><SectionKicker number="02" children="In motion" /><h2 id="ad-film-title">A chapter<br /><i>on camera.</i></h2><p>A look at Food Chapter as it is meant to be seen: close, warm, and ready for the next order.</p><a className="button button--orange" href={whatsappHref} target="_blank" rel="noreferrer"><MessageCircle size={17} /> Ask about an order</a></div>
+        <div className="ad-film__frame"><video autoPlay muted loop playsInline poster={ASSETS.adPoster} preload="metadata"><source src={ASSETS.adVideo} type="video/mp4" /></video><span className="ad-film__label">Food Chapter / advertising film</span></div>
       </section>
 
       <section id="menu" className="menu section-shell">
         <div className="menu__intro">
-          <SectionKicker number="02" children="The main chapter" />
+          <SectionKicker number="03" children="The main chapter" />
           <h2>Choose your<br /><i>plot twist.</i></h2>
           <p>The menu as supplied by Food Chapter. Prices shown in PKR notation from the current menu card.</p>
           <div className="menu__rule" />
@@ -239,21 +249,15 @@ export default function Home() {
             </article>
           ))}
         </div>
-        <div className="menu__gallery" aria-label="Food Chapter food details">
-          <figure><img src={ASSETS.burgerDetail} alt="Crispy zinger burger on green takeaway paper" loading="lazy" /><figcaption>01 / the first bite</figcaption></figure>
-          <figure><img src={ASSETS.heroPoster} alt="Burger and curly fries in Food Chapter’s cinematic hero scene" loading="lazy" /><figcaption>02 / pull the story</figcaption></figure>
-          <figure><img src={ASSETS.wrapDetail} alt="Crispy zinger wrap with fries" loading="lazy" /><figcaption>03 / wrap it up</figcaption></figure>
-          <figure className="menu__gallery-wide"><img src={ASSETS.menuArtwork} alt="Food Chapter menu artwork with burgers, fries, wraps, broast, pizza, and deals" loading="lazy" /><figcaption>04 / keep the chapter going</figcaption></figure>
-        </div>
       </section>
 
       <section className="deals section-shell">
-        <div className="deals__head"><SectionKicker number="03" children="Group scenes" /><h2>Deals made<br /><i>for sharing.</i></h2></div>
+        <div className="deals__head"><SectionKicker number="04" children="Group scenes" /><h2>Deals made<br /><i>for sharing.</i></h2></div>
         <div className="deal-grid">{deals.map(([name, detail, price]) => <article className="deal" key={name}><span className="deal__name">{name}</span><p>{detail}</p><strong>{price}</strong></article>)}</div>
       </section>
 
       <section className="reviews section-shell">
-        <div className="reviews__head"><SectionKicker number="04" children="From the guestbook" /><h2>Real words.<br /><i>No rewrite.</i></h2><span className="rating">3.7 <span>★</span> <small>20 Google reviews</small></span></div>
+        <div className="reviews__head"><SectionKicker number="05" children="From the guestbook" /><h2>Real words.<br /><i>No rewrite.</i></h2><span className="rating">3.7 <span>★</span> <small>20 Google reviews</small></span></div>
         <div className="review-grid">
           <figure className="review"><div className="review__stars">★★★★★</div><blockquote>“Pizza is rated 3/10”</blockquote><figcaption>Zeeshan Khaliq <span>· 8 months ago</span></figcaption></figure>
           <figure className="review review--offset"><div className="review__stars">★★★★★</div><blockquote>“The service was very good in past but from last two orders. The order delivered very late and very cold.”</blockquote><figcaption>Ahmad Ali <span>· 3 months ago</span></figcaption></figure>
@@ -263,7 +267,7 @@ export default function Home() {
       </section>
 
       <section id="visit" className="visit section-shell">
-        <div className="visit__main"><SectionKicker number="05" children="Come by" /><h2>Find the<br /><i>chapter.</i></h2><p className="visit__address">8/A, Commercial Market,<br />Mohlanwal Road, behind Khursheed Rasheed Hospital,<br />Gulbahar Colony Gul Bahar Housing Society,<br />Lahore, 54000, Pakistan</p><a className="button button--orange" href={mapsHref} target="_blank" rel="noreferrer"><MapPin size={17} /> Get directions <ExternalLink size={14} /></a></div>
+        <div className="visit__main"><SectionKicker number="06" children="Come by" /><h2>Find the<br /><i>chapter.</i></h2><p className="visit__address">8/A, Commercial Market,<br />Mohlanwal Road, behind Khursheed Rasheed Hospital,<br />Gulbahar Colony Gul Bahar Housing Society,<br />Lahore, 54000, Pakistan</p><a className="button button--orange" href={mapsHref} target="_blank" rel="noreferrer"><MapPin size={17} /> Get directions <ExternalLink size={14} /></a></div>
         <div className="visit__details">
           <div className="detail-block"><Clock3 size={19} /><div><span className="detail-block__label">Hours</span><p>Hours are not listed on the supplied Google Maps information.</p></div></div>
           <div className="detail-block"><Utensils size={19} /><div><span className="detail-block__label">Service</span><p>Dine-in · Takeout</p></div></div>

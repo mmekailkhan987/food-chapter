@@ -93,10 +93,29 @@ h1 i, h2 i { color: #e66b2e; font-style: normal; }
 h2 { font-size: clamp(62px, 8vw, 125px); color: #174b35; margin-top: 36px; }
 .story__copy p { color: #5a5447; font-size: 16px; line-height: 1.7; max-width: 440px; }
 .text-link { display: inline-flex; align-items: center; gap: 7px; margin-top: 12px; color: #e66b2e; font-family: "Space Mono", monospace; font-size: 10px; letter-spacing: .1em; text-transform: uppercase; font-weight: 700; }
-.story__visual { position: relative; margin-top: 45px; }
-.story__visual img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; filter: saturate(.92); }
-.story__caption { display: block; position: absolute; left: -30px; bottom: 24px; padding: 8px 10px; background: #e66b2e; color: #fff6e7; font-family: "Space Mono", monospace; font-size: 9px; transform: rotate(-4deg); }
+.story__lanes { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0; max-width: 390px; margin: 27px 0 18px; border-top: 1px solid rgba(23,75,53,.35); }
+.story__lanes span { padding: 11px 0; border-bottom: 1px solid rgba(23,75,53,.35); color: #174b35; font-family: "Space Mono", monospace; font-size: 10px; text-transform: uppercase; letter-spacing: .05em; }
+.story__lanes b { color: #e66b2e; margin-right: 8px; }
+.story__card { position: relative; min-height: 350px; padding: 42px 35px 30px; background: #174b35; color: #f5eedc; display: flex; flex-direction: column; justify-content: flex-end; overflow: hidden; }
+.story__card::before { content: ""; position: absolute; inset: 18px; border: 1px solid rgba(245,238,220,.35); pointer-events: none; }
+.owner-logo { position: absolute; z-index: 1; top: 31px; left: 31px; width: 128px; height: 58px; object-fit: contain; object-position: left center; mix-blend-mode: screen; filter: saturate(.85) contrast(1.04); }
+.story__card-stamp { position: absolute; top: 40px; right: 35px; width: 88px; height: 88px; border: 1px solid #e66b2e; border-radius: 50%; display: grid; place-content: center; text-align: center; color: #e66b2e; font-family: "Bebas Neue", sans-serif; font-size: 16px; line-height: .82; transform: rotate(10deg); }
+.story__card-label { position: relative; color: #e66b2e; font-family: "Space Mono", monospace; font-size: 9px; text-transform: uppercase; letter-spacing: .14em; }
+.story__card strong { position: relative; margin: 16px 0; font-family: "Bebas Neue", sans-serif; font-weight: 400; font-size: clamp(46px, 5vw, 72px); line-height: .82; text-transform: uppercase; }
+.story__card strong i { color: #e66b2e; font-style: normal; }
+.story__card p { position: relative; max-width: 240px; margin: 0 0 22px; color: rgba(245,238,220,.72); font-size: 11px; line-height: 1.5; }
+.story__card .button { position: relative; align-self: flex-start; }
+.story__visual, .story__caption { display: none; }
 
+.ad-film { display: grid; grid-template-columns: .8fr 1.2fr; gap: 9vw; align-items: center; background: #113d2a; color: #f5eedc; overflow: hidden; }
+.ad-film .section-kicker__number { background: #e66b2e; color: #fff6e7; }
+.ad-film h2 { color: #f5eedc; }
+.ad-film h2 i { color: #e66b2e; }
+.ad-film__copy p { max-width: 310px; color: rgba(245,238,220,.72); font-size: 14px; line-height: 1.65; margin: 0 0 25px; }
+.ad-film__frame { position: relative; justify-self: center; width: min(100%, 430px); aspect-ratio: 9 / 13; background: #0e2d20; border: 1px solid rgba(245,238,220,.32); padding: 12px; transform: rotate(1.5deg); }
+.ad-film__frame::before { content: ""; position: absolute; inset: 5px; border: 1px solid rgba(230,107,46,.7); pointer-events: none; z-index: 1; }
+.ad-film__frame video { display: block; width: 100%; height: 100%; object-fit: cover; }
+.ad-film__label { position: absolute; left: 25px; bottom: 24px; z-index: 2; padding: 7px 9px; background: #e66b2e; color: #fff6e7; font-family: "Space Mono", monospace; font-size: 8px; letter-spacing: .08em; text-transform: uppercase; }
 .menu { display: grid; grid-template-columns: minmax(220px, .65fr) 1.35fr; gap: 9vw; background: #e9ddc4; }
 .menu__intro { position: sticky; top: 30px; align-self: start; }
 .menu__intro h2 { margin-bottom: 26px; }
@@ -185,7 +204,8 @@ h2 { font-size: clamp(62px, 8vw, 125px); color: #174b35; margin-top: 36px; }
 
 @media (max-width: 900px) {
   .section-shell { padding: 92px 6vw; }
-  .story, .menu, .deals, .visit { grid-template-columns: 1fr; gap: 48px; }
+  .story, .ad-film, .menu, .deals, .visit { grid-template-columns: 1fr; gap: 48px; }
+  .ad-film__frame { justify-self: start; width: min(100%, 390px); }
   .menu__intro { position: static; }
   .story__visual { max-width: 450px; margin-left: auto; }
   .deal-grid { grid-template-columns: repeat(3, 1fr); }
@@ -208,7 +228,10 @@ h2 { font-size: clamp(62px, 8vw, 125px); color: #174b35; margin-top: 36px; }
   h2 { font-size: clamp(62px, 19vw, 100px); }
   .story { display: flex; flex-direction: column; }
   .story__copy { order: 2; }
-  .story__visual { order: 3; margin-top: 0; }
+  .story__card { order: 3; min-height: 320px; }
+  .owner-logo { top: 27px; left: 27px; width: 112px; height: 50px; }
+  .story__lanes { max-width: none; }
+  .ad-film__frame { width: min(100%, 330px); }
   .menu__list { grid-template-columns: 1fr; gap: 34px; }
   .menu__gallery { grid-template-columns: 1fr 1fr; }
   .menu__gallery-wide { grid-column: 1 / -1; }

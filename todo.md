@@ -1,9 +1,9 @@
-# Food Chapter — Additive Revision
+# Food Chapter — Advertising Video Revision
 
-- [ ] Preserve the current hero, color system, typography, section order, and existing copy.
-- [ ] Add only confirmed business links and details from the new content file.
-- [ ] Generate additional food/menu supporting imagery that matches the current visual identity.
-- [ ] Improve menu scanning and visual richness without replacing the existing menu structure.
-- [ ] Add any useful extra video-section prompt guidance as optional content, not a layout rewrite.
-- [ ] Revalidate desktop/mobile behavior and all outbound links.
-- [ ] Save a new checkpoint for the owner handoff.
+- [ ] Treat DRPHU8ejMAg.mp4 as advertising/influencer footage, not as the logo.
+- [ ] Validate the advertising video and derive a poster frame.
+- [ ] Keep the current SVG/wordmark logo treatment until a real logo file is uploaded.
+- [ ] Add the advertising video as a dedicated, polished editorial section without replacing the hero.
+- [ ] Preserve the redesigned first section and remove the unwanted three-image strip.
+- [ ] Tighten mobile behavior and validate video playback, links, and production build.
+- [ ] Save a new checkpoint for owner handoff.
