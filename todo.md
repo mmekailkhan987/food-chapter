@@ -1,10 +1,9 @@
-# Food Chapter — Remaining Work
+# Food Chapter — Additive Revision
 
-- [ ] Validate the supplied hero video’s duration, resolution, codec, and opening frame.
-- [ ] Copy the supplied hero video into the webdev asset store and derive a poster frame.
-- [ ] Finish the Food Chapter responsive one-page layout with hero, about, menu, reviews, hours, location, and contact footer.
-- [ ] Add tap-to-call, WhatsApp-first ordering, and Google Maps directions links.
-- [ ] Add transform-based layered parallax with mobile support and reduced-motion fallback.
-- [ ] Add SEO metadata, Open Graph image, favicon, and small configuration files.
-- [ ] Run build and browser verification for video, motion, links, responsive layout, and performance.
-- [ ] Save the final checkpoint and provide the live URL and concise design summary.
+- [ ] Preserve the current hero, color system, typography, section order, and existing copy.
+- [ ] Add only confirmed business links and details from the new content file.
+- [ ] Generate additional food/menu supporting imagery that matches the current visual identity.
+- [ ] Improve menu scanning and visual richness without replacing the existing menu structure.
+- [ ] Add any useful extra video-section prompt guidance as optional content, not a layout rewrite.
+- [ ] Revalidate desktop/mobile behavior and all outbound links.
+- [ ] Save a new checkpoint for the owner handoff.

@@ -19,6 +19,10 @@ const ASSETS = {
   heroPoster: "/manus-storage/food-chapter-hero-poster_a7c9a852.jpg",
   menuArtwork: "/manus-storage/food-chapter-menu_a7afd19d.jpg",
   paperTexture: "",
+  burgerDetail: "/manus-storage/food-chapter-burger-detail_0ebedf2e.jpg",
+  pizzaDetail: "/manus-storage/food-chapter-pizza-detail_895a70a9.jpg",
+  wrapDetail: "/manus-storage/food-chapter-wrap-detail_5ddead1f.jpg",
+  wingsDetail: "/manus-storage/food-chapter-wings-detail_1625ea80.jpg",
 };
 
 const phone = "+92 328 4118664";
@@ -26,6 +30,7 @@ const telHref = "tel:+923284118664";
 const whatsappHref = "https://wa.me/923284118664?text=Hi%20Food%20Chapter%2C%20I%27d%20like%20to%20place%20an%20order.";
 const mapsHref = "https://www.google.com/maps/dir/?api=1&destination=Food%20Chapter%2C%208%2FA%20Commercial%20Market%2C%20Mohlanwal%20Road%2C%20Lahore%2054000%2C%20Pakistan";
 const instagramHref = "https://www.instagram.com/foodchaptergb/";
+const foodpandaHref = "https://foodpanda.pk";
 
 const menuSections = [
   {
@@ -193,6 +198,7 @@ export default function Home() {
           <div className="hero__actions">
             <a className="button button--orange" href={whatsappHref} target="_blank" rel="noreferrer"><MessageCircle size={17} /> Start on WhatsApp</a>
             <a className="button button--ghost" href="#menu">Read the menu <ArrowDownRight size={17} /></a>
+            <a className="button button--ghost" href={foodpandaHref} target="_blank" rel="noreferrer">Foodpanda <ExternalLink size={14} /></a>
           </div>
         </div>
         <div className="hero__footer"><span>Fast food restaurant</span><span className="hero__scroll"><span className="hero__scroll-line" /> Scroll to browse</span><span>54000 · PK</span></div>
@@ -218,7 +224,10 @@ export default function Home() {
           <p>The menu as supplied by Food Chapter. Prices shown in PKR notation from the current menu card.</p>
           <div className="menu__rule" />
           <p className="menu__small">Order for dine-in or takeout. For the fastest route, message first.</p>
-          <a className="button button--green" href={whatsappHref} target="_blank" rel="noreferrer"><MessageCircle size={17} /> Message to order</a>
+          <div className="menu__actions">
+            <a className="button button--green" href={whatsappHref} target="_blank" rel="noreferrer"><MessageCircle size={17} /> Message to order</a>
+            <a className="button button--outline-green" href={foodpandaHref} target="_blank" rel="noreferrer">Order on Foodpanda <ExternalLink size={14} /></a>
+          </div>
         </div>
         <div className="menu__list">
           {menuSections.map((section) => (
@@ -229,6 +238,12 @@ export default function Home() {
               </div>
             </article>
           ))}
+        </div>
+        <div className="menu__gallery" aria-label="Food Chapter food details">
+          <figure><img src={ASSETS.burgerDetail} alt="Crispy zinger burger on green takeaway paper" loading="lazy" /><figcaption>01 / the first bite</figcaption></figure>
+          <figure><img src={ASSETS.heroPoster} alt="Burger and curly fries in Food Chapter’s cinematic hero scene" loading="lazy" /><figcaption>02 / pull the story</figcaption></figure>
+          <figure><img src={ASSETS.wrapDetail} alt="Crispy zinger wrap with fries" loading="lazy" /><figcaption>03 / wrap it up</figcaption></figure>
+          <figure className="menu__gallery-wide"><img src={ASSETS.menuArtwork} alt="Food Chapter menu artwork with burgers, fries, wraps, broast, pizza, and deals" loading="lazy" /><figcaption>04 / keep the chapter going</figcaption></figure>
         </div>
       </section>
 
@@ -261,6 +276,7 @@ export default function Home() {
         <div className="footer__top"><a className="brand brand--footer" href="#top"><img src={ASSETS.mark} alt="" className="brand__mark" /><span className="brand__wordmark"><b>FOOD</b><b>CHAPTER</b></span></a><p>Some call it food.<br /><i>We call it a chapter.</i></p><a className="footer__arrow" href="#top" aria-label="Back to top"><ArrowUpRight /></a></div>
         <div className="footer__bottom"><span>© Food Chapter · Lahore, Pakistan</span><span className="footer__actions"><a href={whatsappHref} target="_blank" rel="noreferrer"><MessageCircle size={15} /> WhatsApp</a><a href={telHref}><Phone size={15} /> {phone}</a><a href={instagramHref} target="_blank" rel="noreferrer"><Instagram size={15} /> foodchaptergb</a></span></div>
       </footer>
+      <a className="whatsapp-float" href={whatsappHref} target="_blank" rel="noreferrer" aria-label="Chat on WhatsApp"><MessageCircle size={21} /><span>Chat on WhatsApp</span></a>
     </main>
   );
 }

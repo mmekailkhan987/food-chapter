@@ -103,6 +103,21 @@ h2 { font-size: clamp(62px, 8vw, 125px); color: #174b35; margin-top: 36px; }
 .menu__intro > p { color: #655d4c; max-width: 280px; font-size: 13px; line-height: 1.65; }
 .menu__small { font-family: "Space Mono", monospace; font-size: 9px !important; text-transform: uppercase; letter-spacing: .1em; }
 .menu__rule { width: 46px; height: 4px; background: #e66b2e; margin: 30px 0; }
+.menu__actions { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 25px; }
+.menu__actions .button { margin-top: 0; }
+.button--outline-green { border: 1px solid #174b35; color: #174b35; }
+.button--outline-green:hover { background: #174b35; color: #f5eedc; }
+.menu__gallery { grid-column: 1 / -1; display: grid; grid-template-columns: 1.15fr .85fr .85fr; gap: 16px; margin-top: 10px; }
+.menu__gallery figure { margin: 0; position: relative; overflow: hidden; background: #174b35; min-height: 190px; }
+.menu__gallery img { display: block; width: 100%; height: 100%; min-height: 190px; object-fit: cover; filter: saturate(.9); transition: transform .5s var(--ease-out); }
+.menu__gallery figure:hover img { transform: scale(1.035); }
+.menu__gallery figcaption { position: absolute; left: 11px; bottom: 10px; padding: 6px 8px; background: #174b35; color: #f5eedc; font-family: "Space Mono", monospace; font-size: 8px; text-transform: uppercase; letter-spacing: .08em; }
+.menu__gallery-wide { grid-column: 1 / -1; max-height: 240px; }
+.whatsapp-float { position: fixed; z-index: 9999; right: 22px; bottom: 22px; display: inline-flex; align-items: center; gap: 0; width: 54px; height: 54px; overflow: hidden; border-radius: 999px; background: #25d366; color: #fff; box-shadow: 0 12px 30px rgba(0,0,0,.22); transition: width .22s var(--ease-out), transform .18s var(--ease-out); animation: wa-pulse 2.2s ease-in-out infinite; }
+.whatsapp-float svg { flex: 0 0 54px; padding: 15px; }
+.whatsapp-float span { white-space: nowrap; font-size: 11px; font-weight: 700; padding-right: 16px; }
+.whatsapp-float:hover { width: 166px; transform: translateY(-3px); }
+@keyframes wa-pulse { 0%, 100% { box-shadow: 0 12px 30px rgba(0,0,0,.22), 0 0 0 0 rgba(37,211,102,.3); } 50% { box-shadow: 0 12px 30px rgba(0,0,0,.22), 0 0 0 8px rgba(37,211,102,0); } }
 .menu__intro .button { margin-top: 25px; }
 .menu__list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px 48px; }
 .menu-group { border-top: 2px solid #174b35; padding-top: 13px; }
@@ -195,6 +210,11 @@ h2 { font-size: clamp(62px, 8vw, 125px); color: #174b35; margin-top: 36px; }
   .story__copy { order: 2; }
   .story__visual { order: 3; margin-top: 0; }
   .menu__list { grid-template-columns: 1fr; gap: 34px; }
+  .menu__gallery { grid-template-columns: 1fr 1fr; }
+  .menu__gallery-wide { grid-column: 1 / -1; }
+  .whatsapp-float { right: 12px; bottom: 12px; width: 50px; height: 50px; }
+  .whatsapp-float svg { flex-basis: 50px; padding: 14px; }
+  .whatsapp-float:hover { width: 50px; transform: none; }
   .deal-grid { grid-template-columns: repeat(2, 1fr); }
   .deal { min-height: 140px; }
   .reviews__head h2 { font-size: 72px; }
@@ -208,6 +228,7 @@ h2 { font-size: clamp(62px, 8vw, 125px); color: #174b35; margin-top: 36px; }
   .footer__top { align-items: flex-start; flex-direction: column; padding-bottom: 45px; }
   .footer__top > p { text-align: left; }
   .footer__bottom { flex-direction: column; }
+  .whatsapp-float span { display: none; }
   .footer__actions { flex-direction: column; gap: 10px; }
 }
 @media (prefers-reduced-motion: reduce) {
