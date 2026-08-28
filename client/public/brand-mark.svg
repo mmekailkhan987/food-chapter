@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Food Chapter chapter seal">
+  <circle cx="64" cy="64" r="58" fill="#e66b2e"/>
+  <circle cx="64" cy="64" r="49" fill="none" stroke="#f5eedc" stroke-width="3"/>
+  <path d="M35 43c10-7 20-7 29 0v43c-9-7-19-7-29 0V43Z" fill="#f5eedc"/>
+  <path d="M64 43c9-7 19-7 29 0v43c-10-7-20-7-29 0V43Z" fill="#f5eedc"/>
+  <path d="M64 43v43" stroke="#174b35" stroke-width="3"/>
+  <path d="M91 29v24m-7-17h14m-7-7v-8" stroke="#174b35" stroke-width="5" stroke-linecap="round"/>
+  <path d="M38 92h52" stroke="#174b35" stroke-width="4" stroke-linecap="round"/>
+</svg>
